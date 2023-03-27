@@ -313,6 +313,14 @@ function send(message) {
                     // customActionTrigger();
                     return;
                 }
+                if (message.toLowerCase() === "disconnect") 	
+                    {	
+                        switch_url()	
+                        console.log("inside send - id below");	
+                        console.log(start_live_response_id);	
+                        window.clearInterval(start_live_response_id);	
+                        // myStopFunction()	
+                    }
                 setBotResponse(botResponse);
             },
             error(xhr, textStatus) {
@@ -349,6 +357,10 @@ function send(message) {
                 // customActionTrigger();
                 return;
             }
+            if (message.toLowerCase() === "connect to a live agent") 	
+                    {	
+                        switch_url()	
+                    }
             setBotResponse(botResponse);
         },
         error(xhr, textStatus) {
